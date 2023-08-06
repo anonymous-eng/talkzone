@@ -5,6 +5,7 @@ const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const cors = require('cors');
 
 const app = express();
 
@@ -12,6 +13,11 @@ dotenv.config();
 connectDB();
 
 app.use(express.json());
+app.use(
+  cors({
+      origin: "https://talkzone.vercel.app",
+  })
+);
 
 app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
