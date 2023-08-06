@@ -33,7 +33,6 @@ import UserListItem from "../userAvatar/UserListItem";
 import { ChatState } from "../../Context/ChatProvider";
 import ToggleColorMode from "../../theme/ToggleColorMode";
 import { useColorModeValue } from "@chakra-ui/react";
-const BASE_URL = process.env.BASE_URL;
 
 function SideDrawer() {
   const [search, setSearch] = useState("");
@@ -84,7 +83,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`${BASE_URL}/api/user?search=${search}`, config);
+      const { data } = await axios.get(`/api/user?search=${search}`, config);
 
       setLoading(false);
       setSearchResult(data);
@@ -111,7 +110,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`${BASE_URL}/api/chat`, { userId }, config);
+      const { data } = await axios.post(`/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);

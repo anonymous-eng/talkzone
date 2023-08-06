@@ -8,7 +8,6 @@ import { useToast, useColorModeValue } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { ChatState } from "../../Context/ChatProvider";
 import "../../Pages/styles.css";
-const BASE_URL = process.env.BASE_URL;
 
 const Login = () => {
   const [show, setShow] = useState(false);
@@ -46,7 +45,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        `${BASE_URL}/api/user/login`,
+        "/api/user/login",
         { email, password },
         config
       );

@@ -9,7 +9,6 @@ import GroupChatModal from "./miscellaneous/GroupChatModal";
 import { Button, useColorModeValue, Flex } from "@chakra-ui/react";
 import { ChatState } from "../Context/ChatProvider";
 import { Avatar } from "@chakra-ui/avatar";
-const BASE_URL = process.env.BASE_URL;
 
 const MyChats = ({ fetchAgain }) => {
   const [loggedUser, setLoggedUser] = useState();
@@ -29,7 +28,7 @@ const MyChats = ({ fetchAgain }) => {
         },
       };
 
-      const { data } = await axios.get(`${BASE_URL}/api/chat`, config);
+      const { data } = await axios.get(`/api/chat`, config);
       setChats(data);
     } catch (error) {
       toast({

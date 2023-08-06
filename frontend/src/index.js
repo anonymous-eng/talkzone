@@ -7,6 +7,9 @@ import ChatProvider from "./Context/ChatProvider";
 import { BrowserRouter } from 'react-router-dom';
 import { ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme/theme.js";
+import axios from "axios";
+
+axios.defaults.baseURL = 'https://talkzone-api.vercel.app';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
