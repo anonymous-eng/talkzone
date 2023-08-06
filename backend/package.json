@@ -7,7 +7,7 @@
     "node": "18.x"
   },
   "scripts": {
-    "start": "node backend/index.js"
+    "start": "node index.js"
   },
   "author": "Harsh Kumar",
   "license": "ISC",
