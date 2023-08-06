@@ -18,7 +18,7 @@ import Picker from '@emoji-mart/react';
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-const ENDPOINT = "https://talkzone-backend-18fn8hrih-anonymous-eng.vercel.app"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+const ENDPOINT = "https://talkzone-backend.vercel.app/";
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
